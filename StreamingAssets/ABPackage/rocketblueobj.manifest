@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 3068079264
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2aaeae2176023480fbbed11abbe26205
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 40a5abf35aec8b0bbbf0c029b3e406b8
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: acd27932048c3254597a02078fa2cb26, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Partical/RocketBlueOBJ.prefab
+Dependencies: []

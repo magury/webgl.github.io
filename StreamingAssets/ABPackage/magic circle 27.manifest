@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 2665119268
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0dfc38873c3a19253dae465616085952
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1cd04c17e2986824d464ef623cfdb7c5
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Skill/Magic circle 27.prefab
+Dependencies: []
