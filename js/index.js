@@ -113,7 +113,7 @@ $(".lookup input").off();
     "December",
   ];
   let timer = {
-    last_month: month + 1,
+    last_month: month,
     last_year: year,
   };
   refreshDate(month, year);
@@ -122,10 +122,7 @@ $(".lookup input").off();
     refreshDate(timer.last_month, timer.last_year);
   });
   $('thead td[colspan="7"] i').on("click", function (e) {
-    console.log(e.target);
-    console.log(timer.last_month, timer.last_year);
     timer = prev_next_info(timer.last_month, timer.last_year, "i");
-    console.log(timer.last_month, timer.last_year);
     refreshDate(timer.last_month, timer.last_year);
   });
 }
