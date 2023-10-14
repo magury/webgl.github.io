@@ -1,10 +1,10 @@
 //获取某年某月第一天是星期几
-function dayStart(month, year) {
-  var tmpDate = new Date(year, month, 1);
+const dayStart = (month, year) => {
+  let tmpDate = new Date(year, month, 1);
   return tmpDate.getDay();
-}
+};
 //计算某年是不是闰年，通过求年份除以4的余数即可
-function daysMonth(month, year) {
+const daysMonth = (month, year) => {
   let month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   let month_normal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
@@ -12,9 +12,11 @@ function daysMonth(month, year) {
   } else {
     return month_normal[month];
   }
-}
+};
 //刷新日历
-function refreshDate(month, year) {
+const refreshDate = (month, year) => {
+  //重置颜色
+  $(".data td").each((index, item) => $(item).css("color", "rgb(255,255,255)"));
   //日期
   let firstday = dayStart(month, year);
   let daycount = daysMonth(month);
@@ -33,25 +35,23 @@ function refreshDate(month, year) {
   nextMonth(month, year, i);
   prevmonth(month, year);
   position_current_date();
-}
-function nextMonth(month, year, daycount) {
+};
+const nextMonth = (month, year, daycount) => {
   var number = 1;
   $("tbody td").each((index, item) => {
-    if (index >= daycount) {
-      $(item).text(number++);
-    }
+    if (index >= daycount) $(item).text(number++);
   });
-}
+};
 //填充上一个月的日期残余
-function prevmonth(month, year) {
+const prevmonth = (month, year) => {
   var timer = prev_next_info(month, year, "em");
   var last_day_amount = daysMonth(timer.last_month, timer.last_year);
   var current_day_id = dayStart(month, year);
   for (var i = current_day_id - 1; i >= 0; i--) {
     $("td[data_date=" + i + "]").text(last_day_amount--);
   }
-}
-function prev_next_info(month, year, status) {
+};
+const prev_next_info = (month, year, status) => {
   var last_month = month;
   var last_year = year;
   if (status == "em") {
@@ -75,13 +75,11 @@ function prev_next_info(month, year, status) {
     last_year,
     last_month,
   };
-}
-function position_current_date() {
+};
+const position_current_date = () => {
   var date = new Date();
-  console.log(date.getDate());
   $("tbody td").css("background", "none");
   for (var i = 0; i <= 41; i++) {
-    console.log($("tbody td").eq(i).text());
     if (
       $("tbody td").eq(i).text() == date.getDate() &&
       $("thead span").eq(0).attr("data_year") == date.getFullYear() &&
@@ -92,4 +90,4 @@ function position_current_date() {
       break;
     }
   }
-}
+};
