@@ -1,0 +1,770 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+em,
+i {
+    /* position: absolute; */
+    font-style: normal;
+    pointer-events: auto;
+
+}
+
+body {
+
+    width: 100% !important;
+    height: 100% !important;
+}
+
+input {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+#presentative {
+    width: 100%;
+    height: 100%;
+}
+
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+    webkit-text-fill-color: #9cc5ec;
+}
+
+li {
+    pointer-events: auto;
+    list-style: none;
+
+}
+
+input:focus {
+    background: red;
+}
+
+input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: red;
+}
+
+input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: red;
+}
+
+input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: red;
+}
+
+input:-moz-placeholder {
+    /* Firefox 18- */
+    color: red;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+button {
+    cursor: pointer;
+    border: 0px;
+}
+
+a {
+    color: #333 !important;
+    text-decoration: none;
+}
+
+.topborad {
+    pointer-events: none;
+    z-index: 6;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+    /* border: 0px solid rgb(83, 95, 111); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: whitesmoke;
+    opacity: 0.8;
+
+}
+
+.topborad>em {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+}
+
+.topborad>.aisle {
+    margin-left: 220px;
+    height: 100%;
+    width: 500px;
+    overflow: hidden;
+    /* border: 1px solid black; */
+
+}
+
+.topborad .search {
+    z-index: 4;
+    left: 140px;
+    pointer-events: auto;
+    position: absolute;
+    transform: translate(-50px) rotateY(180deg);
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    width: 40px;
+    border-radius: 8px;
+    color: rgb(15, 17, 177);
+    filter: brightness(2);
+    font-size: 25px;
+    text-align: center;
+}
+
+.icon-guanbijiantou {
+    cursor: pointer;
+}
+
+.search:hover {
+    background-color: rgb(198, 197, 197);
+}
+
+.topborad>ul {
+    position: relative;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    width: 400px;
+    /* background-color: purple; */
+    padding-left: 200px;
+
+}
+
+.search i {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    transform: rotate(45deg);
+
+}
+
+.search i::before {
+    position: absolute;
+    content: '';
+    background: #FFF;
+    border-radius: 2px;
+    width: 4px;
+    height: 25px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search i::after {
+    position: absolute;
+    content: '';
+    background: #FFF;
+    border-radius: 2px;
+    width: 25px;
+    height: 4px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search button {
+    z-index: 999;
+    position: absolute;
+    left: 131%;
+    top: -38%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    background: url(fonts/R-C.png) no-repeat;
+    filter: drop-shadow(-33px 37px 0 rgb(134, 23, 237));
+    background-size: 100%;
+
+}
+
+img {
+    position: absolute;
+    z-index: -1;
+}
+
+.topborad li {
+    height: 40px;
+    width: 40px;
+}
+
+#binary li {
+    position: relative;
+    display: block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+#binary li:hover::after,
+#binary li:hover::before {
+    animation-play-state: paused;
+}
+
+#binary li::after {
+    content: '';
+    border: 0px solid black;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    width: 100%;
+    height: 100%;
+    animation: h 4s infinite;
+    animation-direction: alternate;
+}
+
+#binary li::before {
+    content: '';
+    border: 0px solid black;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%);
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    width: 100%;
+    height: 100%;
+    animation: w 4s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes w {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes h {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+.topborad input {
+    position: absolute;
+    pointer-events: auto;
+    left: 140px;
+    height: 40px;
+    line-height: 40px;
+    width: 0px;
+    border-radius: 20px;
+    background-color: rgb(31, 31, 34);
+    opacity: 0.8;
+
+    color: rgba(213, 192, 87, 0.4);
+    /* border-top-right-radius: 2px;
+border-bottom-right-radius: 2px; */
+    /* border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px; */
+}
+
+.topborad>ul li {
+    float: left;
+    /* width: 100px; */
+    /* background-color: pink; */
+}
+
+.search .expand {
+    position: absolute;
+    bottom: -4px;
+    left: -150px;
+    display: inline-block;
+    margin-right: 10px;
+    width: auto;
+    height: auto;
+    line-height: auto;
+    padding-left: 10px;
+    color: rgb(255, 253, 253);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    border-radius: 4px;
+    background-color: rgb(0, 0, 0);
+    transform: translate(0%, 100%);
+}
+
+.search .expand::before {
+    content: '';
+    z-index: -1;
+    top: -4px;
+    left: 22px;
+    transform: rotate(-135deg);
+    border: 9px solid black;
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: transparent;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    position: absolute;
+}
+
+.topborad ul>i {
+    pointer-events: auto;
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    top: 0px;
+    right: 30px;
+    font-size: 30px;
+    transform: rotate(90deg);
+    color: whitesmoke;
+}
+
+.topborad em {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(255, 245, 247);
+    font-style: italic;
+    font-size: 11px;
+}
+
+#register {
+    pointer-events: auto;
+    cursor: pointer;
+    float: left;
+    margin-left: 10px;
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+#th {
+    background: url(images/th.png) no-repeat;
+    height: 20px;
+    width: 20px;
+    transform: translateY(50%);
+    background-size: 100%;
+}
+
+#register:hover {
+    color: rgb(207, 14, 14)
+}
+
+.topborad .flash {
+    float: right;
+    height: 100%;
+    line-height: 40px;
+    width: 51px;
+    /* margin-left: 200px; */
+    background: url(images/flash.png) no-repeat;
+    background-position: 0 0;
+    background-size: 542%;
+    animation: run1 1s steps(4), run2 1s 1s steps(4), move 25s;
+    animation-iteration-count: infinite, infinite, infinite, infinite;
+}
+
+.topborad li span:hover {
+    color: rgb(240, 240, 17);
+}
+
+@keyframes run1 {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -200px 0;
+    }
+
+}
+
+@keyframes run2 {
+    from {
+        background-position: 0 -40px;
+    }
+
+    to {
+        background-position: -200px -40px;
+    }
+
+}
+
+@keyframes move {
+    0% {
+        transform: translate(55px);
+    }
+
+    100% {
+        transform: translate(-485px);
+    }
+}
+
+.enbrace {
+    z-index: -1;
+    margin-top: 0px;
+    height: 650px;
+    overflow: hidden;
+    background: #e7cccc;
+}
+
+@keyframes forkout {
+    0% {
+        transform: translate(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(50px) rotate(315deg);
+    }
+}
+
+@keyframes forkin {
+    0% {
+        transform: translate(50px) rotate(315deg);
+    }
+
+    100% {
+        transform: translate(0px) rotate(0deg);
+    }
+}
+
+.exit_out {
+    animation: forkout 1s ease 1 forwards;
+}
+
+.exit_in {
+    animation: forkin 1s ease 1 forwards;
+}
+
+.a {
+    width: 100%;
+    height: 100%;
+}
+
+.recomment {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    width: 300px;
+    height: 800px;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.8;
+    color: aliceblue !important;
+}
+
+.recomment>span:nth-child(1) {
+    position: relative;
+    padding-left: 5px;
+    border: 1px solid red;
+    display: block;
+    width: 100%;
+    height: 20px;
+}
+
+.recomment>span:nth-child(1)::after {
+    content: '欢迎来到本网站，汪！';
+    font-size: 12px;
+    line-height: 20px;
+    color: aliceblue;
+}
+
+.recomment span:nth-child(1) i {
+    position: absolute;
+    right: 10px;
+}
+
+.recomment .lookup {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border: 0px solid rgb(133, 120, 120);
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    margin-top: 5px;
+}
+
+.lookup input[type="text"] {
+    color: rgb(255, 255, 255);
+    width: 90%;
+    height: 60%;
+    margin-left: 8px;
+    margin-top: 8px;
+    background-color: rgb(141, 162, 182);
+}
+
+.lookup input[type="text"]:focus {
+    background-color: rgb(49, 52, 55);
+}
+
+.lookup em {
+    position: absolute;
+    position: absolute;
+    right: 27px;
+    top: 12px;
+
+}
+
+.data {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    text-align: center;
+    border: 0px solid rgb(133, 120, 120);
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+.data table {
+    position: absolute;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 90%;
+    height: 200px;
+    margin: 0 auto;
+    font-size: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    top: 50%;
+    transform: translate(15px, -50%);
+
+
+}
+
+.data table tbody td {
+    color: rgb(255, 255, 255);
+}
+
+.data table td {
+    border: 1px solid rgb(171, 75, 75);
+    /* cursor: pointer; */
+}
+
+td[colspan="7"] em {
+    position: absolute;
+    left: 0px;
+    pointer-events: auto;
+    font-size: 18px;
+    transform: rotate(180deg);
+}
+
+td[colspan="7"] i {
+    font-size: 18px;
+    position: absolute;
+    right: 0px;
+
+}
+
+#colomn {
+    position: relative;
+    top: 10px;
+    width: 100%;
+    border: 1px solid rgb(100, 93, 93);
+
+}
+
+#colomn li {
+    width: 90%;
+    border: 1px solid rgb(87, 84, 84);
+    margin: 5px auto;
+    /* margin-bottom: 0px; */
+}
+
+#colomn li span {
+    margin-left: 5px;
+}
+
+#colomn li i {
+    position: absolute;
+    right: 20px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    background: url('../images/bg.jpg') no-repeat;
+    height: 100% !important;
+    background-size: 100%;
+    background-attachment: fixed;
+    /* filter:brightness(0.5) */
+
+}
+
+.a {
+    z-index: 55;
+    background: url(../images/0.jpg);
+    position: absolute;
+    top: 0;
+}
+
+img {
+    width: 100%;
+    /* height: 100%; */
+}
+
+.bg {
+
+    z-index: 78;
+    float: left;
+    width: 100%;
+    position: absolute;
+    /* background: url(images/bg.jpg); */
+    background-size: 100%;
+    margin-top: 0px;
+    /* border: 1px solid black; */
+    background-color: #fff;
+}
+
+.title {
+    left: 410px;
+    top: 350px;
+    position: absolute;
+    text-align: center;
+    width: 450px;
+}
+
+.title span {
+    font-family: '华文行楷';
+    font-size: 50px;
+    color: rgb(20, 24, 26);
+}
+
+@keyframes aaa {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 480px;
+    }
+}
+
+.title em {
+    position: relative;
+    pointer-events: auto;
+    /* cursor: pointer; */
+    display: block;
+    /* transform: rotate(-90deg); */
+    width: 20px;
+    height: 20px;
+    margin: 50px auto;
+    font-size: 40px;
+    animation: bbb 2s infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    z-index: 5;
+}
+
+@keyframes bbb {
+    0% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(40px);
+    }
+}
+
+#colomn i:hover,
+#colomn em:hover {
+    color: #ffe100;
+    filter: brightness(2);
+}
+
+.mleft {
+    margin-left: 0px !important;
+}
+
+/* 更新 */
+#binary {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+    top: 70%;
+}
+
+#binary li {
+    background-color: #fff;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    font-family: 华文行楷;
+    color: #000000;
+}
+
+#binary::after {
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 460px;
+    font-family: '幼圆';
+    font-size: 30px;
+    color: #000000;
+    margin: 0 auto;
+
+}
+
+#binary p {
+    /* text-align: center; */
+    overflow: hidden;
+    display: block !important;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    height: 35px;
+    font-family: '幼圆';
+    font-size: 30px;
+    color: #000000;
+    margin: 0 auto;
+    animation: aaa 6s infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+#binary p::before {
+    content: "山城夜半催金柝，酒醒孤馆灯花落";
+
+}
+
+.icon-jiantou_liebiaoxiangyou {
+    cursor: pointer;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    text-align: center;
+}
+
+footer span {
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    font-family: 幼圆;
+    color: rgb(239, 255, 250);
+}

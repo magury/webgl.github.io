@@ -1,28 +1,379 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Unity WebGL Player | 秘密行动</title>
-  <link rel="shortcut icon" href="TemplateData/favicon.ico">
-  <link rel="stylesheet" href="TemplateData/style.css">
-  <script src="TemplateData/UnityProgress.js"></script>
-  <script src="Build/UnityLoader.js"></script>
-  <script>
-    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/webgl.json", { onProgress: UnityProgress });
-  </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/dialog.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_i1q24q7wsff.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_vupgibsrx0g.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_8iaj8vu5ebq.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_mas2frjkk3p.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_8pl16lf9x0s.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887646_xvu45xquwi.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_bxo7ylv6l4.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3888244_wvfsgf3q2bm.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_9dn2z3dcqnr.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_psjxi8kbj9o.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_754ji11m2yj.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_0k8u2q64pyd.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_0t8fk5ni7hvp.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_59bwxtttq9w.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_gqfnrca1k2.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_6f6i1xishpf.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_phjjiiw7d9q.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/c/font_3887007_r6fxm5swc3d.css">
+    <!-- <link rel="stylesheet" href="css/style2.css"> -->
+    <script src="js/jquery.min.js"></script>
+    <script>document.documentElement.className = "js"; var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e }; supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 </head>
 
 <body>
-  <div class="webgl-content">
-    <div id="gameContainer" style="width: 100vw; height: 100vh"></div>
-    <div class="footer">
-      <div class="webgl-logo"></div>
-      <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-      <div class="title">秘密行动(加载缓慢，请等待一会儿，如若不行，请刷新一下)</div>
+    <header>
+        <div class="topborad">
+            <ul>
+                <div class="search iconfont icon-fangdajing">
+                    <i style="display: none;"></i>
+                    <div class="expand" style="display: none;"></div>
+                </div>
+                <input type="text" name="" id="text" value="search your require">
+                <li id="lx" title="进入豆瓣官网查看更多信息">
+                    <a href="https://www.douban.com">
+                        <span class="iconfont icon-douban"></span>
+                    </a>
+
+                </li>
+                <li title="联系我们">
+                    <a href="javascript:;">
+                        <span class="iconfont icon-xinxichaxun"></span>
+                    </a>
+
+                </li>
+                <li title="您对本页的建议">
+                    <a href="javascript:;">
+                        <span class="iconfont icon-gongnengjianyi"></span>
+                    </a>
+
+                </li>
+                <li title="进入本周推荐">
+                    <a href="javascript:;">
+                        <span class="iconfont icon-jinruxiangmu"></span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="iconfont icon-xiangmu00"></span>
+                    </a>
+
+                </li>
+
+
+            </ul>
+            <em title="本汪将推荐大家都喜欢看的,提交将大数据筛选出来">汪! 我来指路啦</em>
+            <span id="register" class="iconfont icon-denglu"></span>
+            <span id="register" class="iconfont icon-weixindenglu" title="微信登录"></span>
+
+            <div class="aisle">
+                <div class="flash">
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <!-- <img src="images/bg.jpg" alt=""> -->
+    <!-- <div class="top" >
+        <main>
+            <div data-scroll>
+                <div class="bg">
+                    <img src="images/bg.jpg" alt="" width="100%">
+                    <div class="title">
+                        <span>看你所看</span>
+                        <p></p>
+                        <label for="">MEMU</label>
+               <em class="iconfont icon-show_danjiantoujiantou_xia"></em>   
+                    </div>
+                </div>
+                <div class="content" >
+                    <div class="item">
+                        <div class="item__img-wrap">
+                            <div class="item__img item__img--t1"></div>
+                        </div>
+                        <div class="item__caption">
+                            <h2 class="item__caption-title">就算你烦我，讨厌我，我也等你</h2>
+                            <p class="item__caption-copy">我等你 等了你多少个春夏秋冬 可是你在哪里 可是你给我的结果有是什么呢
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item__img-wrap">
+                            <div class="item__img item__img--t2"></div>
+                        </div>
+                        <div class="item__caption">
+                            <h2 class="item__caption-title">演的传神，导的精彩!</h2>
+                            <p class="item__caption-copy">燃料燃烧自己，</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item__img-wrap">
+                            <div class="item__img item__img--t3"></div>
+                        </div>
+                        <div class="item__caption">
+                            <h2 class="item__caption-title">最重要的是勇气</h2>
+                            <p class="item__caption-copy">心理创伤并不存在！决定我们自身的不是过去的经历，而是我们自己赋予经历的意义。</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item__img-wrap">
+                            <div class="item__img item__img--t1"></div>
+                        </div>
+                        <div class="item__caption">
+                            <h2 class="item__caption-title">心中有正义</h2>
+                            <p class="item__caption-copy">在热闹的街区中摆荡飞跃，欣赏令人叹为观止的漫威地标和曼哈顿地标。在场景中因地制宜，用史诗级的劲爆动作痛扁恶棍。</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item__img-wrap">
+                            <div class="item__img item__img--t2"></div>
+                        </div>
+                        <div class="item__caption">
+                            <h2 class="item__caption-title">失落过，气馁过，终成功</h2>
+                            <p class="item__caption-copy">我曾经堕入无边黑暗，失去了一切，平凡才是最终的归宿！</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item__img-wrap">
+                            <div class="item__img item__img--t3"></div>
+                        </div>
+                        <div class="item__caption">
+                            <h2 class="item__caption-title">臭狗熊!</h2>
+                            <p class="item__caption-copy">你🐻大吗?` 不，我是熊二，熊大!光头强又来砍树了!</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item__img-wrap">
+                            <div class="item__img item__img--t1"></div>
+                        </div>
+                        <div class="item__caption">
+                            <h2 class="item__caption-title">成都!拥有无数人的梦想</h2>
+                            <p class="item__caption-copy">因为一首歌怀念一座城。曾经的天府广场武侯祠锦里杜甫草堂青羊宫春熙路宽窄巷子昭觉寺文殊院都成了回忆。</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item__img-wrap">
+                            <div class="item__img item__img--t3"></div>
+                        </div>
+                        <div class="item__caption">
+                            <h2 class="item__caption-title">人妖相恋，道阻且长</h2>
+                            <p class="item__caption-copy">真没用啊 二货道士 就这么死掉的话 一点也不像你啊</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item__img-wrap">
+                            <div class="item__img item__img--t2"></div>
+                        </div>
+                        <div class="item__caption">
+                            <h2 class="item__caption-title">荔枝从远方来</h2>
+                            <p class="item__caption-copy">在贵妃诞日之前，从岭南运来新鲜荔枝。荔枝“一日色变，两日香变，三日味变”，而岭南距长安五千余里</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div> -->
+    <!-- 更新 -->
+    <ul id="binary">
+        <li>游戏详细介绍</li>
+        <li>进入试玩！</li>
+        <p></p>
+    </ul>
+    <div class="recomment" style="display: none;">
+        <span class="iconfont icon-ganxie">
+            <i class="iconfont icon-guanbijiantou"></i>
+        </span>
+        <div class="lookup">
+            <input type="text" name="" id="" value="" autocomplete="off" placeholder="找一找">
+            <em class="iconfont icon-fangdajing"></em>
+        </div>
+        <div class="data">
+            <table>
+                <thead>
+                    <tr>
+                        <td colspan="7">
+                            <em class="iconfont icon-jiantou_liebiaoxiangyou"></em>
+                            现在是：<span></span>年
+                            <span></span>月
+                            <span></span>
+                            <i class="iconfont icon-jiantou_liebiaoxiangyou"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>MON</td>
+                        <td>TUE</td>
+                        <td>WED</td>
+                        <td>THU</td>
+                        <td>FRI</td>
+                        <td>SAT</td>
+                        <td>SUN</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
+    </div>
+    <footer>
+        <span>主题:Stealth for Java Web homework 作者:团结屯猫妹</span>
+    </footer>
+    <script>
+        // 登录提示
+        $('#register,icon-weixindenglu').on('click', function () {
+            $.sendWarningToTop('技术还未正式上线', 3000, function () {
+                console.log('sendWarningToTop closed');
+            });
+        });
+        // 确认框：提示语+居中+确认+取消
+        $('.icon-xinxichaxun,.icon-gongnengjianyi,.icon-jinruxiangmu').click(() => {
+            $.sendConfirm({
+                hideHeader: true,
+                withCenter: true,
+                msg: '暂时未开放此功能哟~',
+                button: {
+                    confirm: 'I see',
+                    cancel: 'Cancel'
+                },
+                onConfirm: function () {
+                    console.log('点击确认！');
+                },
+                onCancel: function () {
+                    console.log('点击取消！');
+                },
+                onClose: function () {
+                    console.log('点击关闭！');
+                }
+            });
+        });
+        $('#binary li').eq(1).click(() => {
+            $.sendConfirm({
+                hideHeader: true,
+                withCenter: true,
+                msg: '请确定您已经知道游戏玩法(如若网络原因出现无法访问，请重新刷新)',
+                button: {
+                    confirm: 'I see',
+                    cancel: 'Cancel'
+                },
+                onConfirm: function () {
+                    location.href = "./webgl/game.html"
+                },
+                onCancel: function () {
+                    console.log('点击取消！');
+                },
+                onClose: function () {
+                    console.log('点击关闭！');
+                }
+            });
+        });
+        let flat = true;
+        $('.icon-xiangmu00').on('click', (e) => {
+            $('.recomment').fadeIn();
+            if (flat == true) {
+                // $('.top').css('display', 'none')
+                // $('body').css('background', 'url(images/bg.jpg) no-repeat');
+                // $('.top').css('height','auto')
+                $('.top').css('filter', 'brightness(0.5)');
+                $('.recomment').css('position', 'fixed')
+                flat = false;
+            }
+            else if (flat == false) {
+                $('.recomment').fadeOut();
+                $('.top').css('display', 'block')
+                // $('body').css('background', 'none');
+                $('.top').css('filter', 'brightness(1)');
+                flat = true;
+            }
+        })
+        //关闭箭头
+        $('.icon-guanbijiantou').on('click', () => {
+            $('.recomment').fadeOut();
+            $('.top').css('display', 'block')
+            // $('body').css('background', 'none');
+            $('.top').css('filter', 'brightness(1)');
+        })
+        //减号
+        $('#colomn i').on('click', (e) => {
+            if ($(this).is('.icon-jianhao')) {
+                return $(this).removeClass('icon-jianhao').addClass('icon-iconfonticon02').next().slideUp();
+            }
+            if ($(this).is('.icon-iconfonticon02')) {
+                return $(this).addClass('icon-jianhao').removeClass('icon-iconfonticon02').next().slideDown();
+            }
+
+        })
+        $('#colomn i').click();
+        $('#binary li').eq(0).on('click', e => window.location.href = 'detail.html')
+    </script>
+    <script src="js/jquery.dialog.min.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
