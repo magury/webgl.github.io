@@ -143,3 +143,7 @@
 .uix-3d-slider--expParticle__arrows .uix-3d-slider--expParticle__arrows--next.disabled {
   visibility: hidden;
 }
+
+td {
+    font-size: 15px;
+}
